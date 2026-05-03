@@ -1,0 +1,7 @@
+- [ ] 6차 과제 완성
+  - [ ] 6-1 c, java, py 완성
+  - [ ] 6-2 c, java, py 완성
+  - [ ] 6-3 c, java, py 완성
+  - [ ] 6-4 c, java, py 완성
+  - [ ] 6-5 c, java, py 완성
+  - [ ] 6-6 c, java, py 완성
