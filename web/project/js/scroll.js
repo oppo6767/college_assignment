@@ -1,5 +1,6 @@
 // original: https://codepen.io/BrianCross/pen/PoWapLP
 // horizontal version: https://codepen.io/GreenSock/pen/xxWdeMK
+// 원작자가 GSAP로 작성하여 이부분은 아직 모르는 것도 있어서 AI한테 도움을 받으면서 JS로 코드 변경
 
 // 변수 설정
 var sections = document.querySelectorAll("section");
@@ -10,7 +11,7 @@ var innerWrappers = Array.from(document.querySelectorAll(".inner"));
 var currentIndex = -1;
 var animating;
 
-// 글자 배열로 나누기
+// 글자 배열로 분리
 var charsets = [];
 var hSpan, hText, hChars;
 
@@ -36,7 +37,7 @@ for (let hi = 0; hi < headings.length; hi++) {
     charsets.push(hChars);
 }
 
-// 초기 설정
+// 화면 초기 설정 화면
 for (let oi = 0; oi < outerWrappers.length; oi++) {
     outerWrappers[oi].style.transform = "translateY(100%)";
 }
@@ -50,18 +51,24 @@ function gotoSection(index, direction) {
     index = ((index % sections.length) + sections.length) % sections.length;
     animating = true;
 
+    // 방향 결정
     let dFactor = (direction === -1) ? -1 : 1;
+
+    // 이전 섹션 보내기
     if (currentIndex >= 0) {
         sections[currentIndex].style.zIndex = "0";
         images[currentIndex].style.transition = "transform 1.25s ease-in-out";
         images[currentIndex].style.transform = "translateY(" + (-15 * dFactor) + "%)";
-        sections[currentIndex].style.visibility = "hidden";
-        sections[currentIndex].style.opacity = "0";
+        
+        let prevIndex = currentIndex;
+        setTimeout(function () {
+            sections[prevIndex].style.visibility = "hidden";
+        }, 1250);
     }
 
+    // 새 섹션 시작 위치 설정
     sections[index].style.zIndex = "1";
     sections[index].style.visibility = "visible";
-    sections[index].style.opacity = "1";
 
     outerWrappers[index].style.transition = "none";
     innerWrappers[index].style.transition = "none";
@@ -78,6 +85,7 @@ function gotoSection(index, direction) {
         chars[ci].style.transform = "translateY(" + (150 * dFactor) + "%)";
     }
 
+    // 애니메이션 실행
     requestAnimationFrame(function () {
         requestAnimationFrame(function () {
             outerWrappers[index].style.transition = "transform 1.25s ease-in-out";
@@ -87,6 +95,7 @@ function gotoSection(index, direction) {
             innerWrappers[index].style.transform = "translateY(0%)";
             images[index].style.transform = "translateY(0%)";
 
+            // 글자 애니메이션 실행
             let shuffled = chars.slice().sort(function () { return Math.random() - 0.5; });
             for (let si = 0; si < shuffled.length; si++) {
                 (function (char, delay) {
@@ -98,6 +107,7 @@ function gotoSection(index, direction) {
                 })(shuffled[si], si * 20);
             }
 
+            // 애니메이션 해제
             outerWrappers[index].addEventListener("transitionend", function () {
                 animating = false;
             }, { once: true });

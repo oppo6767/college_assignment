@@ -1,0 +1,28 @@
+/*
+original: https://codepen.io/BrianCross/pen/PoWapLP
+horizontal version: https://codepen.io/GreenSock/pen/xxWdeMK
+홈 화면 상단 메뉴바 설정
+*/
+
+/* 최상위 변수 설정 */
+:root {
+    --color-surface-white: #ffffff;
+}
+
+/* 전체 영역 설정 */
+* {
+    box-sizing: border-box;
+    user-select: none; /* 텍스트 선택 방지 */
+}
+
+/* 주소 영역 설정 */
+a {
+    color: var(--color-surface-white);
+    text-decoration: none;
+}
+
+/* ----------------------------------------------- */
+
+/* gallery 상단 메뉴 바 설정 */
+
+

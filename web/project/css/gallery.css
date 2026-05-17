@@ -1,0 +1,49 @@
+/* 최상위 변수 설정 */
+:root {
+    --color-bg-header: #171544;
+    --color-bg-gallery: #2E3035;
+}
+
+/* 배경 색 및 크기 설정 */
+header {
+    min-height: 500px;
+    width: 100%;
+    background-color: var(--color-bg-header);
+}
+
+body {
+    background-color: var(--color-bg-gallery);
+}
+
+.galleryMenu {
+    margin: 0;
+    border: 0;
+    padding: 13px 15px 15px 13px;
+}
+
+/* 업로드버튼 설정 */
+.bottonUpload {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #1BB76E;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+
+}
+
+.bottonUpload::before {
+    content: "";
+    display: inline-flex;
+    background-image: url('image/upload.jpg');
+    background-size: cover;
+    width: 20px;  
+    height: 20px;
+}
+
+
+.galleryCategoryMenu {
+    display: flex;
+    justify-content: center;
+}
