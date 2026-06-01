@@ -1,0 +1,106 @@
+/* 최상위 변수 설정 */
+:root {
+    --color-bg-background: #515254;
+}
+
+/* --------------------------------------- */
+
+/* 배경 색 및 크기 설정 */
+body {
+    background: #2e3035;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* --------------------------------------- */
+
+/* 업로드 박스 설정 */
+.upload-box {
+    width: 960px;
+    height: 361px;
+    flex-wrap: wrap;
+    display: flex;
+    position: relative; 
+    background-color: #000;
+    box-shadow: 0 0 15px 7px rgba(0, 0, 0, 0.9);
+
+    /* 나가기 버튼 설정 */
+    & .back-button {
+        height: 88px;
+        width: 88px;
+        right: -45px;
+        top: -25px;
+        z-index: 2;
+        position: absolute;
+        border: none;
+        background: none;  
+        cursor: pointer;
+        
+        & img{
+            height: 50px;
+            width: 80px;
+        }
+    }
+
+    /* 이미지 파일 업로드 박스 설정 */
+    & .file-box {
+        width: 480px;
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #EE8542;
+
+        & .file-content {
+            width: 120px;
+            height: 150px;
+            border-style: dotted;
+            border-color: #fff;
+
+            & img {
+                width: 120px;
+                height: 150px;
+            }
+        }
+
+        & .text {
+            font-size: 25px;
+            margin-top: 35px;
+            color: #e2d8d8;
+        }
+    }
+
+    /* URL로 이미지 업로드 박스 설정 */
+    & .URL-box {
+        width: 480px;
+        height: 320px;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #3C424B;
+
+        /*
+        & .push {
+             나중에 추가 할 예정
+        }
+        */
+    }
+
+    /* 하단 텍스트 설정 */
+    & .text-box {
+        margin: 0 0;
+        width: 960px;
+        height: 41px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        bottom: 0;
+    }
+}

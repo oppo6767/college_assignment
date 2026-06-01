@@ -9,6 +9,7 @@ horizontal version: https://codepen.io/GreenSock/pen/xxWdeMK
         #00000099 50%,
         #0000001a 100%
     );
+    --color-surface-white: #ffffff;
     --light: #ffffff;
 }
 
@@ -16,6 +17,12 @@ horizontal version: https://codepen.io/GreenSock/pen/xxWdeMK
 * {
     box-sizing: border-box;
     user-select: none; /* 텍스트 선택 방지 */
+}
+
+/* 주소 영역 설정 */
+a {
+    color: var(--color-surface-white);
+    text-decoration: none;
 }
 
 /* body 설정 */

@@ -1,6 +1,6 @@
 // original: https://codepen.io/BrianCross/pen/PoWapLP
 // horizontal version: https://codepen.io/GreenSock/pen/xxWdeMK
-// 원작자가 GSAP로 작성하여 이부분은 아직 모르는 것도 있어서 AI한테 도움을 받으면서 JS로 코드 변경
+// 원작자가 GSAP로 작성하였고 아직 JS를 배우기 전이여서 전체적으로 AI한테 도움을 받음
 
 // 변수 설정
 var sections = document.querySelectorAll("section");
@@ -149,4 +149,5 @@ window.addEventListener("pointerup", function (e) {
     }
 });
 
+// 초기 화면 실행
 gotoSection(0, 1);
