@@ -3,32 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>업로드 파일</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/upload.css">
 </head>
 <body>
-    <!--upload-box - 업로드 박스의 틀-->
-    <div class="upload-box">
-        <!--back-button - 나가기 버튼(뒤로 가기)-->
-        <a href="gallery.html" class="back-button">
-            <img src="css/image/delbutton.png">
-        </a>
-        <!--file-box - 이미지 파일 드래그 해서 업로드하는 박스-->
-        <div class="file-box">
-            <div class="file-content">
-                <img src="css/image/imageupload.png">
-            </div>
-            <div class="text">이미지 파일 첨가하십시오</div>
-            <!--나중에 여러 파일 한 번에 드래그 앤 드룹 기능 추가-->
-        </div>
-        <!--URL-box - URL을 통한 이미지 업로드하는 박스-->
-        <div class="URL-box">
-            <button class="push">나중에 URL 삽입 시 이미지 검색 기능 추가할 예정</button>
-        </div>
-        <!--text-box - 텍스트 박스-->
+    <!--미리보기 화면 전체 틀-->
+    <div class="drop-zone-box">
+        <!--미리보기 화면-->
+        <div class="image-preview"></div>
+        <!--사진 정보 입력-->
         <div class="text-box">
-            <p>테스트용도</p>
+            <textarea class="info-text" placeholder="글을 작성하는 칸입니다. 꼭 할 필요는 없습니다"></textarea>
         </div>
+    </div>
+    <!--upload 버튼-->
+    <div class="button-box">
+        <button type="button" class="push">게시하기</button>
     </div>
     <script src="js/upload.js"></script>
 </body>

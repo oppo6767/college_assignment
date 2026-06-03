@@ -1,6 +1,9 @@
-// original: https://codepen.io/BrianCross/pen/PoWapLP
-// horizontal version: https://codepen.io/GreenSock/pen/xxWdeMK
-// 원작자가 GSAP로 작성하였고 아직 JS를 배우기 전이여서 전체적으로 AI한테 도움을 받음
+/**
+ * original: https://codepen.io/BrianCross/pen/PoWapLP
+ * horizontal version: https://codepen.io/GreenSock/pen/xxWdeMK
+ * MIT License - Copyright (c) 2022 GreenSock
+ * 원작자가 GSAP로 작성하였고 아직 JS를 배우기 전이여서 전체적으로 AI한테 도움을 받음
+*/
 
 // 변수 설정
 var sections = document.querySelectorAll("section");

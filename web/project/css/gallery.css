@@ -22,7 +22,7 @@ header {
     z-index: 999;
     min-height: 70px;
     width: 100%;
-    background-color: var(--color-bg-header);   
+    background-color: var(--color-bg-header);
 }
 
 /* 상단 메뉴바 설정 */
@@ -30,17 +30,17 @@ header {
     padding: 13px 15px 15px 13px;
 
     & .bottonUpload {
+        gap: 8px;
+        width: 100px;
+        height: 40px;
+        padding-left: 5px;
+        border-radius: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-left: 5px;
-        border-radius: 20px;
-        gap: 8px;
+        text-decoration: none;
         background-color: #1BB76E;
         color: #fff;
-        width: 100px;
-        height: 40px;
-        text-decoration: none;
 
         &:hover {
             box-shadow: 2px 2px 10px 1px #fff;
@@ -52,6 +52,26 @@ header {
             background-size: cover;
             width: 20px;
             height: 20px;
+        }
+    }
+
+    & .confirm-delete {
+        display: none;
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 20px;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        position: relative;
+        background-color: #37474F;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 2px 2px 10px 1px #fff;
         }
     }
 }
@@ -102,7 +122,7 @@ header {
     }
 }
 
-/* 갤러리 설정 - 삭제용 체크 박스 생성 */
+/* 갤러리 설정 */
 .gallery {
     position: relative;
     display: grid;
@@ -118,9 +138,10 @@ header {
     & .cardGallery {
         border-radius: 8px;
         overflow: hidden;
-        background-color: #474A51;
         display: flex;
         flex-direction: column;
+        position: relative;
+        background-color: #474A51;
         box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
 
         & .image {
@@ -134,9 +155,45 @@ header {
 
         & .info-text {
             padding: 10px;
-            height: auto;
             flex-shrink: 0;
+            height: 65px;
             align-items: center;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* 최대 2줄 */
+            -webkit-box-orient: vertical;
+        }
+
+        /* 삭제 체크 박스 */
+        & .checkbox {
+            z-index: 1000;
+            top: 20px;
+            right: 10px;
+            width: 1.4em;
+            height: 1.4em;
+            border-radius: 50%;
+            display: none;
+            position: absolute;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: #fff;
+            border: 1px solid gray;
+            transform: translateY(-50%);
+
+            &:checked {
+                background-color: #0078D4;
+
+                &::after {
+                    content: "✓";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: #fff;
+                    font-size: 0.9em;
+                    line-height: 1;
+                }
+            }
         }
     }
 }
@@ -180,6 +237,46 @@ header {
         & img {
             height: 50px;
             width: 80px;
+        }
+    }
+}
+
+/* 삭제 버튼 클릭 시 활성화 */
+.gallery.delete-mode {
+    & .cardGallery.selected {
+        box-shadow: 0 0 10px 1px #fff;
+    }
+    
+    & .checkbox {
+        display: block;
+    }
+}
+
+header.delete-mode {
+    & .galleryMenu {
+        & .bottonUpload {
+            display: none;
+        }
+
+        & .confirm-delete {
+            display: flex;
+        }
+    }
+    
+    & .del-button {
+        width: 80px;
+        height: 50px;
+        top: 10px;
+        right: -25px;
+        transform: none;
+        position: fixed;
+        background: none;
+    
+        & .img {
+            height: 50px;
+            width: 80px;
+            left: -17px;
+            position: relative;
         }
     }
 }
