@@ -32,10 +32,18 @@ HTML
 CSS
 JavaScript
 
+## API 기능
+저장소 - Cloudinary
+DB - 파이어베이스
+
 ## 주의사항
-웹 브라우저 메모리(localStorage-base64) 기반으로 이미지 저장 한계 있음
-작은 이미지 기준 약 12~38장 저장 가능
+Cloudinary 기반으로 이미지 저장
+삭제 시 Cloudinary에서 수동 삭제 필요
 
 ## 라이선스 - index.html, home.css, scroll.js
 MIT License - Copyright (c) 2022 GreenSock
 출처: https://codepen.io/GreenSock/pen/XWzRraJ
+
+## 그 외
+아직 저장소랑 DB을 API로 연결하는 부분 + JS 이용이 미흡함
+이 부분은 사이트를 계속 만들면서 노력을 해야한다고 느낌

@@ -1,4 +1,19 @@
+// 데이터베이스 연결
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDmEpjFAG8Q72C0dUR4fojlurJulrUbz2U",
+    authDomain: "dbtest-898ea.firebaseapp.com",
+    projectId: "dbtest-898ea",
+    storageBucket: "dbtest-898ea.firebasestorage.app",
+    messagingSenderId: "1014378933403",
+    appId: "1:1014378933403:web:3a542a5eb2ae2655bb2a3e"
+};
+
 // 변수 설정
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 let header = document.querySelector("header");
 let gallary = document.querySelector(".gallery");
 let lightbox = document.querySelector("#lightbox");
@@ -59,10 +74,12 @@ function createCard(image) {
     gallary.appendChild(card);
 }
 
-// 갤러리 로드 함수 - AI 도움 받음
-function loadGallery() {
-    let images = JSON.parse(localStorage.getItem("galleryImage")) || [];
-    images.forEach(image => createCard(image));
+// 갤러리 로드 함수 - AI 도움
+async function loadGallery() {
+    const querySnapshot = await getDocs(collection(db, "gallery"));
+    querySnapshot.forEach((doc) => {
+        createCard(doc.data());
+    });
 }
 
 // 라이트박스 열기 함수
